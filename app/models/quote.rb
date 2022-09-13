@@ -15,4 +15,6 @@ class Quote < ApplicationRecord
   # que no contexto do model Quote é igual a { quote: self }, então também podemos remove-lo
 
   after_create_commit -> { broadcast_prepend_to 'quotes' }
+  after_update_commit -> { broadcast_replace_to 'quotes' }
+  after_destroy_commit -> { broadcast_remove_to 'quotes' }
 end
