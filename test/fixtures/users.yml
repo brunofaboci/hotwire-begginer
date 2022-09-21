@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+accountant:
+  company_id: 1
+  email: accountant@kpmg.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+manager:
+  company_id: 1
+  email: manager@kpmg.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+eavesdropper:
+  company_id: 2
+  email: eavesdropper@pwc.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
